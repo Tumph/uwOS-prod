@@ -24,13 +24,14 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   };
 
   return (
-    <div className="search-container">
+    <div className="search-container" style={{ width: '300px', margin: '20px auto' }}>
       <input 
         type="text" 
         className="search-bar" 
         placeholder="Search"
         value={searchValue}
         onChange={handleInputChange}
+        style={{ width: '300px' }}
       />
       <span 
         className="clear-search" 

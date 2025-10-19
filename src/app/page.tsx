@@ -13,7 +13,9 @@ export default function Home() {
 
   return (
     <main>
-      <SearchBar onSearch={handleSearch} />
+      <div className="search-wrapper" style={{ width: '390px', margin: '0 auto 20px' }}>
+        <SearchBar onSearch={handleSearch} />
+      </div>
       <AppGrid searchText={searchText} />
     </main>
   );
