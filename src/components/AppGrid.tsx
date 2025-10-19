@@ -309,8 +309,9 @@ export function AppGrid({ searchText }: AppGridProps) {
     if (searchText === '') {
       setFilteredApps(apps);
     } else {
+      const normalizedSearch = searchText.toLowerCase().replace(/\s+/g, '');
       const filtered = apps.filter(app => 
-        app.name.toLowerCase().startsWith(searchText.toLowerCase())
+        app.name.toLowerCase().replace(/\s+/g, '').includes(normalizedSearch)
       );
       setFilteredApps(filtered);
     }
