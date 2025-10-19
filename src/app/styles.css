@@ -1,191 +1,194 @@
-    <style> 
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-        body {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('public/background.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
-        }
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('public/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
 
-        /* Search Bar */
-        .search-container {
-            width: 100%;
-            max-width: 300px;
-            margin: 20px auto 40px;
-            text-align: center;
-            position: relative;
-        }
+/* Search Bar */
+.search-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 40px;
+    text-align: center;
+    position: relative;
+}
 
-        .search-bar {
-            width: 100%;
-            padding: 8px 35px 8px 15px;
-            border-radius: 20px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 14px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
+.search-bar {
+    width: 100%;
+    padding: 8px 35px 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
 
-        .search-bar::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
 
-        .search-bar:focus {
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.25);
-        }
+.search-bar:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.25);
+}
 
-        .clear-search {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            color: white;
-            font-size: 12px;
-            line-height: 16px;
-            text-align: center;
-            cursor: pointer;
-            display: none;
-        }
-        
-        .clear-search:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
+.clear-search {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
 
-        /* App Grid */
-        .app-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+.clear-search:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
-        /* App Icon */
-        .app-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            transition: transform 0.2s ease, opacity 0.3s ease;
-            width: 120px;
-            margin: 0 15px;
-        }
+/* App Grid */
+.app-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
-        .app-icon:hover {
-            transform: scale(1.05);
-        }
+/* App Icon */
+.app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    width: 120px;
+    margin: 0 15px;
+}
 
-        .app-icon:active {
-            transform: scale(0.95);
-        }
+.app-icon:hover {
+    transform: scale(1.05);
+}
 
-        .icon {
-            width: 90px;
-            height: 90px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-        }
+.app-icon:active {
+    transform: scale(0.95);
+}
 
-        .icon-inner {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 32px;
-        }
+.icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
 
-        .app-name {
-            color: white;
-            font-size: 14px;
-            text-align: center;
-            margin-top: 5px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
+.icon-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+}
 
-        /* App-specific styles */
-        .hyperloo { background: linear-gradient(135deg, #111b24, #082542); }
-        .app-store { background: linear-gradient(135deg, #1E90FF, #0066CC); }
-        .semesters { background: linear-gradient(135deg, #dcdcdc, #424242); }
-        .map { background: linear-gradient(135deg, #cae4c9, #77ea8e); }
-        .uwflow { background: linear-gradient(135deg, #ffffff, #ffffff); }
-        .grt { background: linear-gradient(135deg, #FF3B30, #D70015); }
-        .weather { background: linear-gradient(135deg, #75dad6, #171761); }
-        .spots { background: linear-gradient(135deg, #b3baff, #217dfe); }
-        .food { background: linear-gradient(135deg, #34C759, #30D158); }
-        .workout { background: linear-gradient(135deg, #e9ecc2, #eeeb44); }
-        .chrome { background: linear-gradient(135deg, #5AC8FA, #007AFF); }
-        .perplexity { background: linear-gradient(135deg, #000000, #000000); }
-        .reddit { background: linear-gradient(135deg, #f0dfff, #b371ff); }
-        .photos { background: linear-gradient(135deg, #FF9500, #FF2D55); }
-        .reverseats { background: linear-gradient(135deg, #000535, #0f126f); }
-        .watguessr { background: linear-gradient(135deg, #8de091, #000000); }
-        /* Responsive adjustments */
-        @media (max-width: 900px) {
-            .app-grid {
-                gap: 30px;
-            }
-        }
+.app-name {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
 
-        @media (max-width: 600px) {
-            .app-grid {
-                gap: 25px;
-            }
-            
-            .icon {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .app-name {
-                font-size: 13px;
-            }
-        }
+/* App-specific styles */
+.hyperloo { background: linear-gradient(135deg, #111b24, #082542); }
+.app-store { background: linear-gradient(135deg, #1E90FF, #0066CC); }
+.semesters { background: linear-gradient(135deg, #dcdcdc, #424242); }
+.map { background: linear-gradient(135deg, #cae4c9, #77ea8e); }
+.uwflow { background: linear-gradient(135deg, #ffffff, #ffffff); }
+.grt { background: linear-gradient(135deg, #FF3B30, #D70015); }
+.weather { background: linear-gradient(135deg, #75dad6, #171761); }
+.spots { background: linear-gradient(135deg, #b3baff, #217dfe); }
+.food { background: linear-gradient(135deg, #34C759, #30D158); }
+.workout { background: linear-gradient(135deg, #e9ecc2, #eeeb44); }
+.chrome { background: linear-gradient(135deg, #5AC8FA, #007AFF); }
+.perplexity { background: linear-gradient(135deg, #000000, #000000); }
+.reddit { background: linear-gradient(135deg, #f0dfff, #b371ff); }
+.photos { background: linear-gradient(135deg, #FF9500, #FF2D55); }
+.reverseats { background: linear-gradient(135deg, #000535, #0f126f); }
+.watguessr { background: linear-gradient(135deg, #8de091, #000000); }
+.uwpilot { background: linear-gradient(135deg, #4285F4, #0F9D58); }
+.watrank { background: linear-gradient(135deg, #FFD700, #FFA500); }
+.learn { background: linear-gradient(135deg, #E87511, #D35400); }
+.notion { background: linear-gradient(135deg, #000000, #848484); }
 
-        @media (max-width: 400px) {
-            .app-grid {
-                gap: 20px;
-            }
-            
-            .icon {
-                width: 70px;
-                height: 70px;
-                border-radius: 16px;
-            }
-            
-            .app-name {
-                font-size: 12px;
-            }
-        }
-    </style>
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .app-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .app-grid {
+        gap: 25px;
+    }
+    
+    .icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .app-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .app-grid {
+        gap: 20px;
+    }
+    
+    .icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+    }
+    
+    .app-name {
+        font-size: 12px;
+    }
+}

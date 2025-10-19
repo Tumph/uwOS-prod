@@ -127,6 +127,7 @@ body {
   justify-content: center;
   color: white;
   font-size: 32px;
+  background: transparent;
 }
 
 .app-name {
@@ -143,7 +144,7 @@ body {
 .semesters { background: linear-gradient(135deg, #dcdcdc, #424242); }
 .map { background: linear-gradient(135deg, #cae4c9, #77ea8e); }
 .uwflow { background: linear-gradient(135deg, #ffffff, #ffffff); }
-.grt { background: linear-gradient(135deg, #FF3B30, #D70015); }
+.grt { background: linear-gradient(135deg, #FF3B30, #fe949f); }
 .weather { background: linear-gradient(135deg, #75dad6, #171761); }
 .spots { background: linear-gradient(135deg, #b3baff, #217dfe); }
 .food { background: linear-gradient(135deg, #34C759, #30D158); }
@@ -154,6 +155,10 @@ body {
 .photos { background: linear-gradient(135deg, #FF9500, #FF2D55); }
 .reverseats { background: linear-gradient(135deg, #000535, #0f126f); }
 .watguessr { background: linear-gradient(135deg, #8de091, #000000); }
+.uwpilot { background: linear-gradient(135deg, #ffa600, #990000); }
+.watrank { background: linear-gradient(135deg, #000000, #555555); }
+.learn { background: linear-gradient(135deg, #E87511, #D35400); }
+.notion { background: linear-gradient(135deg, #000000, #848484); }
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
